@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Position</title>
+	<meta charset="utf-8">
+	<p style="padding-left:42px;"> absolute：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。<br>
+		fixed：生成绝对定位的元素，相对于浏览器窗口进行定位。<br>
+		relative：生成相对定位的元素，相对于其正常位置进行定位。<br>
+		inherit：规定应该从父元素继承 position 属性的值。</p>
+	</head>
+	<body>
+		<style type="text/css">
+			/*position:absolute*/
+			body{
+				height: 2000px;  /*这里将body的高度设置为2000px是为了区分absolute和fixed的差别*/
+			}
+			.test-div{
+				position:absolute;
+				left:50px;
+				top:150px
+			}
+			/*position:fixed*/
+			.test2-div{
+				position:fixed;
+				left:50px;
+				top:180px
+			}
+			/*position:relative + position:absolute*/
+			.out-div{
+				width: 300px;
+				height: 300px;
+				background: purple;  /*这里定义个背景，让我们知道这个div在哪*/
+				margin:150px 0px 0px 43px;
+				position: relative
+			}
+			.in-div{
+				position:absolute;
+				left:50px;
+				top:50px;
+				color:red
+			}
+		</style>
+		<div class="test-div">Hello absolute</div>
+		<div class="test2-div">Hello fixed</div>
+		<div class="out-div">
+			<div class="in-div">Hello World</div>
+		</div>
+	</body>
+	</html>
